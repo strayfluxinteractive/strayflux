@@ -19,6 +19,7 @@ TEST(Sum, Normal) {
 }
 
 int main(int argc, char **argv) {
+  LOG(INFO) << "My first info log using default logger";
   testing::InitGoogleTest(&argc, argv);
   return RUN_ALL_TESTS();
 }
