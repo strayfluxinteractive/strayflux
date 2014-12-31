@@ -30,3 +30,7 @@ script:
 after_success:
 - bii user strayfluxinteractive -p $BII_strayfluxinteractive_PASSWORD
 - bii publish
+
+env:
+	global:
+		secure: "m1mVjRT0GHZFiU3Q3b7ja0zGJ/iv52A7Bm6Yb7PFJRItwu086AZXVdQ527a0luCtDyN72jWzjsPrk63hh8bejTB/HFjzeUu3evXCr1sAz383FYeB1aX6wSGPJZDfWId9bDrr3K0hvQyZZLf/0LIDwuLcZV01EwLMFskwHTVkUqU="
