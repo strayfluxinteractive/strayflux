@@ -19,14 +19,14 @@ install:
 - rm cmake-3.0.2-Linux-64.tar.gz
 script:
 - cmake --version
-- bii init starflux
-- mkdir -p ./starflux/blocks/starfluxinteractive/starflux
-- mv !(starflux) ./starflux/blocks/starfluxinteractive/starflux
-- cd starflux
+- bii init strayflux
+- mkdir -p ./strayflux/blocks/strayfluxinteractive/strayflux
+- mv !(strayflux) ./strayflux/blocks/strayfluxinteractive/strayflux
+- cd strayflux
 - bii find -um
 - bii cpp:build
 - cd bin
 - ./strayfluxinteractive_strayflux_test_main
 after_success:
-- bii user starfluxinteractive -p $BII_starfluxinteractive_PASSWORD
+- bii user strayfluxinteractive -p $BII_strayfluxinteractive_PASSWORD
 - bii publish
