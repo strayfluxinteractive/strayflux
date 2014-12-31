@@ -8,6 +8,9 @@
  */
 
 #include "google/gtest/gtest.h"
+#include "easylogging++.h"
+
+_INITIALIZE_EASYLOGGINGPP
 
 int sum(int a, int b) {return a+b;}
 
