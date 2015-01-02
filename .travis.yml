@@ -31,6 +31,17 @@ after_success:
 - bii user strayfluxinteractive -p $BII_strayfluxinteractive_PASSWORD
 - bii publish
 
+addons:
+  coverity_scan:
+    project:
+      name: "strayfluxinteractive/strayflux"
+    notification_email: zephyrz2712@gmail.com
+    build_command: script
+    branch_pattern: coverity_scan
+
 env:
   global:
-    secure: "m1mVjRT0GHZFiU3Q3b7ja0zGJ/iv52A7Bm6Yb7PFJRItwu086AZXVdQ527a0luCtDyN72jWzjsPrk63hh8bejTB/HFjzeUu3evXCr1sAz383FYeB1aX6wSGPJZDfWId9bDrr3K0hvQyZZLf/0LIDwuLcZV01EwLMFskwHTVkUqU="
+    # Biicode
+    - secure: "m1mVjRT0GHZFiU3Q3b7ja0zGJ/iv52A7Bm6Yb7PFJRItwu086AZXVdQ527a0luCtDyN72jWzjsPrk63hh8bejTB/HFjzeUu3evXCr1sAz383FYeB1aX6wSGPJZDfWId9bDrr3K0hvQyZZLf/0LIDwuLcZV01EwLMFskwHTVkUqU="
+    # Coverity
+    - secure: "ltR85Gfh9gcDbj3LdVHlRzZKIaf9HtKKXjDAaUnEsmKQKFCjnK2kmg9g+GZdTjgeVZpNyVUDIh1WtYqJ7xEjt/7xTzDiBBBlIVYWjV6hoN08QRTHrwlE4ChMU36ci+ib1FgzsPBrPEJeFc6J+GeXQ6GcsNZLZFviSEKW15DI71k="
