@@ -1,8 +1,14 @@
 language: cpp
 compiler:
 - gcc
-install: if [ ${COVERITY_SCAN_BRANCH} != 1 ]; then tools/dependencies.sh; fi
-script: if [ ${COVERITY_SCAN_BRANCH} != 1 ]; then tools/build.sh; fi
+install: 
+- if [[ ${COVERITY_SCAN_BRANCH} != 1 ]];
+    then tools/dependencies.sh;
+  fi
+script: 
+- if [[ ${COVERITY_SCAN_BRANCH} != 1 ]];
+    then tools/build.sh;
+  fi
 after_success:
 - bii user strayfluxinteractive -p $BII_strayfluxinteractive_PASSWORD
 - bii publish
