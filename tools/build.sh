@@ -5,6 +5,7 @@ set -e
 # Print commands and their arguments as they are executed.
 set -x
 
+cd ..
 bii init strayflux
 mkdir -p ./strayflux/blocks/strayfluxinteractive/strayflux
 mv !(strayflux) ./strayflux/blocks/strayfluxinteractive/strayflux
