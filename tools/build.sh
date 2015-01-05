@@ -14,3 +14,4 @@ bii find -um
 bii cpp:build
 cd bin
 ./strayfluxinteractive_strayflux_test_main
+cd ..
