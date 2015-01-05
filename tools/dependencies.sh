@@ -17,6 +17,7 @@ sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 90
 sudo apt-get install ggcov
 which gcov
 gcov --version
+sudo update-alternatives --install /usr/bin/gcov gcov /usr/bin/g++-4.8 90
 
 # Cmake
 wget https://s3.amazonaws.com/biibinaries/thirdparty/cmake-3.0.2-Linux-64.tar.gz
