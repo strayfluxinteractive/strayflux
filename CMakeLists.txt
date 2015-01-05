@@ -12,7 +12,3 @@ ADD_BIICODE_TARGETS()
 
 # Activate CPP11
 ACTIVATE_CPP11(INTERFACE ${BII_BLOCK_TARGET})
-
-# Add gcov
-TARGET_COMPILE_OPTIONS(${BII_BLOCK_TARGET} INTERFACE "-g -O0 -Wall -W -fprofile-arcs -ftest-coverage")
-
