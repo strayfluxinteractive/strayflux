@@ -8,7 +8,7 @@
  */
 
 #include "google/gtest/gtest.h"
-#include "easylogging++.h"
+#include "logger/easylogging++.h"
 
 _INITIALIZE_EASYLOGGINGPP
 
