@@ -12,6 +12,3 @@ ADD_BIICODE_TARGETS()
 
 # Activate CPP11
 ACTIVATE_CPP11(INTERFACE ${BII_BLOCK_TARGET})
-
-# Coverage
-SET(CMAKE_CXX_FLAGS "-g -O0 -fprofile-arcs -ftest-coverage")
