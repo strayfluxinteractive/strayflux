@@ -11,6 +11,7 @@ mkdir -p ./strayflux/blocks/strayfluxinteractive/strayflux
 mv !(strayflux) ./strayflux/blocks/strayfluxinteractive/strayflux
 cd strayflux
 bii find -um
+bii cpp:build --enable-gcov
 bii cpp:build
 cd bin
 ./strayfluxinteractive_strayflux_test_main
