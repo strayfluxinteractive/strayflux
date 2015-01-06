@@ -6,9 +6,11 @@ before_install:
 install: if [[ ${COVERITY_SCAN_BRANCH} != 1 ]]; then tools/dependencies.sh ; fi
 script: if [[ ${COVERITY_SCAN_BRANCH} != 1 ]]; then tools/build.sh; fi
 after_success:
+- pwd
+- tree
+- coveralls --gcov-options '\-lp'
 - bii user strayfluxinteractive -p $BII_strayfluxinteractive_PASSWORD
 - bii publish
-- coveralls --gcov-options '\-lp'
 
 addons:
   coverity_scan:
