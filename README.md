@@ -6,3 +6,5 @@ strayflux
 [![Coverity](https://scan.coverity.com/projects/3814/badge.svg)](https://scan.coverity.com/projects/3814)
 
 C++ Game framework
+
+Add description here
