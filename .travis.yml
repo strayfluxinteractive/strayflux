@@ -6,11 +6,10 @@ before_install:
 install: if [[ ${COVERITY_SCAN_BRANCH} != 1 ]]; then tools/dependencies.sh ; fi
 script: if [[ ${COVERITY_SCAN_BRANCH} != 1 ]]; then tools/build.sh; fi
 after_success:
-- ls -la
-- /blocks/strayfluxinteractive/strayflux/tools/coverage.sh
+- strayflux/blocks/strayfluxinteractive/strayflux/tools/coverage.sh
 - cd strayflux
 - bii user strayfluxinteractive -p $BII_strayfluxinteractive_PASSWORD
-- if [[ ${TRAVIS_BRANCH} -eq "master" ]]; then bii publish --versiontag ${TRAVIS_COMMIT} ; fi
+- if [[ ${TRAVIS_BRANCH} -eq "master" ]]; then bii publish ; fi
 
 addons:
   coverity_scan:
