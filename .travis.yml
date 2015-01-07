@@ -6,7 +6,7 @@ before_install:
 install: if [[ ${COVERITY_SCAN_BRANCH} != 1 ]]; then tools/dependencies.sh ; fi
 script: if [[ ${COVERITY_SCAN_BRANCH} != 1 ]]; then tools/build.sh; fi
 after_success:
-- coveralls --gcov-options 'build/strayfluxinteractive/strayflux/CMakeFiles/strayfluxinteractive_strayflux_test_main.dir/'
+- /blocks/strayfluxinteractive/strayflux/tools/coverage.sh
 - cd strayflux
 - bii user strayfluxinteractive -p $BII_strayfluxinteractive_PASSWORD
 - if [[ ${TRAVIS_BRANCH} -eq "master" ]]; then bii publish; fi
