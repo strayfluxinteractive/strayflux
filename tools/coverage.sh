@@ -1,1 +1,1 @@
-coveralls --gcov-options 'strayflux/build/strayfluxinteractive/strayflux/CMakeFiles/strayfluxinteractive_strayflux_test_main.dir/' -e 'strayflux/deps/' -e 'strayflux/build/' -e 'strayflux/blocks/strayfluxinteractive/strayflux/logger/easylogging++.h'
+coveralls --gcov-options 'build/strayfluxinteractive/strayflux/CMakeFiles/strayfluxinteractive_strayflux_test_main.dir/' -e 'deps/' -e 'build/' -e 'sblocks/strayfluxinteractive/strayflux/logger/easylogging++.h'
