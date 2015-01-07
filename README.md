@@ -5,4 +5,4 @@ strayflux
 [![Coverage Status](https://img.shields.io/coveralls/strayfluxinteractive/strayflux.svg)](https://coveralls.io/r/strayfluxinteractive/strayflux)
 [![Coverity](https://scan.coverity.com/projects/3814/badge.svg)](https://scan.coverity.com/projects/3814)
 
-C++ Gameframework
+C++ Game framework
