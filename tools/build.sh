@@ -15,5 +15,6 @@ bii find -um
 bii cpp:configure --enable-gcov
 bii cpp:build
 cd bin
+ls -la
 strayfluxinteractive_strayflux_test_main
 cd ..
