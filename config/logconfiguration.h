@@ -8,14 +8,17 @@
 class LogConfiguration : public Configuration {
     public:
         LogConfiguration();
-        LogConfiguration(std::string path);
+        LogConfiguration(std::string name, std::string path);
         ~LogConfiguration();
         
         void load();
-        void load(std::string path);
         void save();
         
+        std::string getName() const;
+        void setName(std::string name);
+        
     private:
+        std::string _name;
         el::Configurations _conf;
 };
 
