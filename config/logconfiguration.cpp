@@ -2,14 +2,12 @@
 
 LogConfiguration::LogConfiguration() {
     setName("default");
-    setPath("default.logcfg");
-    load();
+    setPath("strayfluxinteractive/strayflux/conf/default.logcfg");
 }
 
 LogConfiguration::LogConfiguration(std::string name ,std::string path) {
     setName(name);
     setPath(path);
-    load();
 }
 
 LogConfiguration::~LogConfiguration() {

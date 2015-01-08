@@ -14,21 +14,23 @@ TEST(LogConfiguration, LoadDefault) {
     LogConfiguration myConfig;
     
     EXPECT_EQ(myConfig.getName(), "default");
-    EXPECT_EQ(myConfig.getPath(), "default.logcfg");
+    EXPECT_EQ(myConfig.getPath(), "strayfluxinteractive/strayflux/conf/default.logcfg");
+    EXPECT_NO_THROW(myConfig.load());
 }
 
 TEST(LogConfiguration, Load) {
-    LogConfiguration myConfig("test", "test.logcfg");
+    LogConfiguration myConfig("test", "strayfluxinteractive/strayflux/test/data/test.logcfg");
     
     EXPECT_EQ(myConfig.getName(), "test");
-    EXPECT_EQ(myConfig.getPath(), "test.logcfg");
+    EXPECT_EQ(myConfig.getPath(), "strayfluxinteractive/strayflux/test/data/test.logcfg");
+    EXPECT_NO_THROW(myConfig.load());
 }
 
 TEST(LogConfiguration, Save) {
-    LogConfiguration myConfig("test", "test.logcfg");
+    LogConfiguration myConfig("test", "strayfluxinteractive/strayflux/test/data/test.logcfg");
     
     EXPECT_EQ(myConfig.getName(), "test");
-    EXPECT_EQ(myConfig.getPath(), "test.logcfg");
+    EXPECT_EQ(myConfig.getPath(), "strayfluxinteractive/strayflux/test/data/test.logcfg");
     
     myConfig.save();
 }
