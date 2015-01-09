@@ -9,8 +9,7 @@ after_success:
 - cd strayflux
 - blocks/strayfluxinteractive/strayflux/tools/coverage.sh
 - bii user strayfluxinteractive -p $BII_strayfluxinteractive_PASSWORD
-- echo !${TRAVIS_PULL_REQUEST}
-- if [[ ${TRAVIS_BRANCH} -eq "master" ]] && [[ ! ${TRAVIS_PULL_REQUEST} ]]; then bii publish ; fi
+- if [[ ${TRAVIS_BRANCH} -eq "master" ]] && [[ ${TRAVIS_PULL_REQUEST} -eq "false" ]]; then bii publish ; fi
 
 addons:
   coverity_scan:
