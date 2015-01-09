@@ -3,6 +3,9 @@
 
 #include <string>
 
+namespace strayflux {
+namespace config {
+
 class Configuration {
     public:
         Configuration();
@@ -19,5 +22,7 @@ class Configuration {
         std::string _path;
 };
 
+} // config
+} // strayflux
 
 #endif // CONFIG_H

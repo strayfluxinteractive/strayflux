@@ -1,5 +1,8 @@
 #include "config/logconfiguration.h"
 
+namespace strayflux {
+namespace config {
+
 LogConfiguration::LogConfiguration() {
     setName("default");
     setPath("strayfluxinteractive/strayflux/conf/default.logcfg");
@@ -30,3 +33,6 @@ void LogConfiguration::load() {
 void LogConfiguration::save() {
     
 }
+
+} // config
+} // strayflux

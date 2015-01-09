@@ -5,6 +5,9 @@
 #include "logger/easylogging++.h"
 #include <string>
 
+namespace strayflux {
+namespace config {
+
 class LogConfiguration : public Configuration {
     public:
         LogConfiguration();
@@ -22,4 +25,7 @@ class LogConfiguration : public Configuration {
         el::Configurations _conf;
 };
 
+
+} // config
+} // strayflux
 #endif // LOGCONFIG_H

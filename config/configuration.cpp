@@ -1,5 +1,8 @@
 #include "config/configuration.h"
 
+namespace strayflux {
+namespace config {
+
 Configuration::Configuration() {
     setPath("strayfluxinteractive/strayflux/conf");
 }
@@ -14,3 +17,6 @@ std::string Configuration::getPath() const {
 void Configuration::setPath(std::string path) {
     this->_path = path;
 }
+
+} // config
+} // strayflux

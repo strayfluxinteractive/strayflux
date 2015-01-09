@@ -1,7 +1,9 @@
 #include "config/logconfiguration.h"
 
+using namespace strayflux;
+
 TEST(LogConfiguration, GetterSetter) {
-    LogConfiguration myConfig;
+    config::LogConfiguration myConfig;
     
     myConfig.setPath("/my/test/path");
     EXPECT_EQ(myConfig.getPath(), "/my/test/path");
@@ -11,7 +13,7 @@ TEST(LogConfiguration, GetterSetter) {
 }
 
 TEST(LogConfiguration, LoadDefault) {
-    LogConfiguration myConfig;
+    config::LogConfiguration myConfig;
     
     EXPECT_EQ(myConfig.getName(), "default");
     EXPECT_EQ(myConfig.getPath(), "strayfluxinteractive/strayflux/conf/default.logcfg");
@@ -19,7 +21,7 @@ TEST(LogConfiguration, LoadDefault) {
 }
 
 TEST(LogConfiguration, Load) {
-    LogConfiguration myConfig("test", "strayfluxinteractive/strayflux/test/data/test.logcfg");
+    config::LogConfiguration myConfig("test", "strayfluxinteractive/strayflux/test/data/test.logcfg");
     
     EXPECT_EQ(myConfig.getName(), "test");
     EXPECT_EQ(myConfig.getPath(), "strayfluxinteractive/strayflux/test/data/test.logcfg");
@@ -27,7 +29,7 @@ TEST(LogConfiguration, Load) {
 }
 
 TEST(LogConfiguration, Save) {
-    LogConfiguration myConfig("test", "strayfluxinteractive/strayflux/test/data/test.logcfg");
+    config::LogConfiguration myConfig("test", "strayfluxinteractive/strayflux/test/data/test.logcfg");
     
     EXPECT_EQ(myConfig.getName(), "test");
     EXPECT_EQ(myConfig.getPath(), "strayfluxinteractive/strayflux/test/data/test.logcfg");
