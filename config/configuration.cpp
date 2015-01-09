@@ -1,18 +1,10 @@
 #include "config/configuration.h"
 
 Configuration::Configuration() {
-    // override stub    
+    setPath("strayfluxinteractive/strayflux/conf");
 }
 
 Configuration::~Configuration() {
-    // override stub    
-}
-
-void Configuration::load() {
-    // override stub    
-}
-
-void Configuration::save() {
     // override stub    
 }
 
