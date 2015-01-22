@@ -1,11 +1,15 @@
 language: cpp
 compiler:
 - gcc
+before_install:
+- sudo pip install cpp-coveralls
 install: if [[ ${COVERITY_SCAN_BRANCH} != 1 ]]; then tools/dependencies.sh ; fi
 script: if [[ ${COVERITY_SCAN_BRANCH} != 1 ]]; then tools/build.sh; fi
 after_success:
+- cd strayflux
+- blocks/strayfluxinteractive/strayflux/tools/coverage.sh
 - bii user strayfluxinteractive -p $BII_strayfluxinteractive_PASSWORD
-- bii publish
+- if [[ ${TRAVIS_BRANCH} -eq "master" ]] && [[ ${TRAVIS_PULL_REQUEST} -eq "false" ]]; then bii publish ; fi
 
 addons:
   coverity_scan:
