@@ -16,13 +16,13 @@ public:
 	ResourceManager();
 	virtual ~ResourceManager();
 
-	Resource getResource(std::string pathOfResource);
+	Resource* getResource(std::string pathOfResource);
 
 private:
-	void loadResource(std::string pathOfResource);
-	void setResource(); //TODO Is this needed?
 
-	std::map <std::string, Resource> _resourceMap;
+	Resource* setResource(std::string pathOfResource);
+
+	std::map <std::string, Resource*> _resourceMap;
 };
 
 } /* namespace ResourceManager */

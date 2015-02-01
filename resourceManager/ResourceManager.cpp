@@ -29,25 +29,39 @@ ResourceManager::~ResourceManager() {
 	// TODO Auto-generated destructor stub
 }
 
-Resource ResourceManager::getResource(std::string pathOfResource) {
-	/* TODO:
-	 * if( pathOfResource is in _resourceMap) {
-	 * 		return _resourceMap<Value>;
-	 * } else {
-	 * 		return loadResource(path of resource);
-	 * }
-	 */
+Resource* ResourceManager::getResource(std::string pathOfResource) {
+	std::map <std::string, Resource*>::iterator it;
+
+	it = _resourceMap.find(pathOfResource);
+
+	if( it == _resourceMap.end() ) {
+		return setResource(pathOfResource);
+	} else {
+		return _resourceMap[it];
+	}
 }
 
-void ResourceManager::loadResource(std::string pathOfResource) {
-	/* TODO:
-	 * new Resource(pathOfResource) aResource;
-	 * aResource.setData(pathToResource);
-	 *
-	 * _resourceMap.insert(aResource.getData());
-	 *
-	 * Return _resourceMap<Value>;
-	 */
+Resource* ResourceManager::setResource(std::string pathOfResource) {
+	std::string type = pathOfResource.substr(pathOfResource.find_last_of(".") + 1);
+	Resource* newResource;
+
+	if( type == "jpg" ){
+		ResourceImage newImage(pathOfResource);
+		newResource = (Resource*) newImage;
+	} else if(type == "wav") {
+		ResourceSound newSound(pathOfResource);
+		newResource = (Resource*) newSound;
+	} else if(type == "pota"){
+		ResourceSomething newSomething(pathOfResource);
+		newResource = (Resource*) newSomething;
+	} else {
+		//ERROR not a resource we can use.
+	}
+
+	if(newResource){
+		_resourceMap.insert( std::pair<std::string, Resource*>(pathOfResource, newResource) );
+		return _resourceMap.find(pathOfResource);
+	}
 }
 
 } /* namespace ResourceManager */
