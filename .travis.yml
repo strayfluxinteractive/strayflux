@@ -8,24 +8,20 @@ script: if [[ ${COVERITY_SCAN_BRANCH} != 1 ]]; then tools/build.sh; fi
 after_success:
 - cd strayflux
 - blocks/strayfluxinteractive/strayflux/tools/coverage.sh
-
 addons:
   coverity_scan:
     project:
-      name: "strayfluxinteractive/strayflux"
+      name: strayfluxinteractive/strayflux
     notification_email: zephyrz2712@gmail.com
     build_command_prepend: tools/dependencies.sh
     build_command: tools/build.sh
     branch_pattern: coverity_scan
-
 env:
   global:
-    # Coverity
-    - secure: "ltR85Gfh9gcDbj3LdVHlRzZKIaf9HtKKXjDAaUnEsmKQKFCjnK2kmg9g+GZdTjgeVZpNyVUDIh1WtYqJ7xEjt/7xTzDiBBBlIVYWjV6hoN08QRTHrwlE4ChMU36ci+ib1FgzsPBrPEJeFc6J+GeXQ6GcsNZLZFviSEKW15DI71k="
-
+  - secure: ltR85Gfh9gcDbj3LdVHlRzZKIaf9HtKKXjDAaUnEsmKQKFCjnK2kmg9g+GZdTjgeVZpNyVUDIh1WtYqJ7xEjt/7xTzDiBBBlIVYWjV6hoN08QRTHrwlE4ChMU36ci+ib1FgzsPBrPEJeFc6J+GeXQ6GcsNZLZFviSEKW15DI71k=
 deploy:
   provider: biicode
   user: strayfluxinteractive
-  password: 
-    secure: m1mVjRT0GHZFiU3Q3b7ja0zGJ/iv52A7Bm6Yb7PFJRItwu086AZXVdQ527a0luCtDyN72jWzjsPrk63hh8bejTB/HFjzeUu3evXCr1sAz383FYeB1aX6wSGPJZDfWId9bDrr3K0hvQyZZLf/0LIDwuLcZV01EwLMFskwHTVkUqU=
+  password:
+    secure: KQXMCjXaOy9DVRFeCPgJCdhTA1aJCerJzYPdjw28bSxwsTlfagpT1mnMA/HgHniHnw48I6ZCLmQnF+GtpqLj0eLoTBzVu5zESZfvg0w4XKlFkC6fLXU+QCCzAMywiRWFyaxNWA1MgL5b1ORdaJTbEd6u2YIIav4hXQeOoFA7Iwc=
   on: master
